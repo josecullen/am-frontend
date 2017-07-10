@@ -15,7 +15,6 @@ import { HotelsModule } from "./hotels/hotels.module";
   ],
   declarations: [
     AppComponent
-
   ],
   providers: [],
   bootstrap: [AppComponent]
