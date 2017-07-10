@@ -1,0 +1,64 @@
+<aside>
+  <div class="title" [ngClass.lt-md]="{ 'title-collapsed' : true}">
+      <span>Filtrar</span>
+      <a (click)="collapse = !collapse">
+        <fa name="caret-down" *ngIf="collapse" fxHide.gt-sm></fa>
+        <fa name="caret-up" *ngIf="!collapse" fxHide.gt-sm></fa>
+      </a>
+  </div>
+
+  <section [ngClass.lt-md]="{'collapsed' : collapse }">
+    <div class="header">
+      <fa name="search"></fa>
+      <span>Nombre de hotel</span>
+    </div>
+    <div>
+      <input type="text" placeholder="Ingrese el nombre del hotel" [(ngModel)]="searchFilter.name">
+      <button (click)="searchFilterChange.next(searchFilter)">Aceptar</button>
+    </div>
+  </section>
+
+  <section [ngClass.lt-md]="{'collapsed' : collapse }">
+    <div class="header">
+      <fa name="dollar"></fa>
+      <span>Precio por noche</span>
+    </div>
+    <nouislider
+      [connect]="true"
+      [min]="minPrice"
+      [max]="maxPrice"
+      [step]="1"
+      [(ngModel)]="searchFilter.priceRange"
+      (ngModelChange)="searchFilterChange.next(searchFilter)">
+    </nouislider>
+    <div class="range">
+      <span class="from">{{ searchFilter.priceRange[0] }}</span>
+      <div fxFlex></div>
+      <span class="to">{{ searchFilter.priceRange[1] }}</span>
+    </div>
+  </section>
+
+  <section class="stars" [ngClass.lt-md]="{'collapsed' : collapse }">
+    <div class="header">
+      <fa name="star"></fa>
+      <span>Estrellas</span>
+    </div>
+    <div>
+      <div>
+        <input
+          type="checkbox"
+          [checked]="searchFilter.hasAllStars()"
+          (click)="toggleAllStars()">
+        <span>Todas las estrellas</span>
+      </div>
+      <div *ngFor="let stars of [5,4,3,2,1]">
+        <input
+          type="checkbox"
+          [checked]="searchFilter.hasStar(stars)"
+          (click)="toggleStar(stars)">
+        <fa name="star" *ngFor="let s of getNumberAsList(stars)"></fa>
+      </div>
+    </div>
+
+  </section>
+</aside>

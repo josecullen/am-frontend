@@ -1,0 +1,45 @@
+:host {
+  display: block;
+  .title {
+    a {
+      padding-left: 10px;
+      cursor: pointer;
+    }
+  }
+  section {
+    .header {
+      color : #157ab1;
+      font-size: 0.675rem;
+      font-weight: bold;
+      padding : 10px;
+    }
+    nouislider{
+      padding: 0 15px;
+    }
+    button {
+      background-color: #002C77;
+      color: #FFFFFF;
+      border: none;
+      height: 30px;
+      margin: 10px;
+    }
+    margin: 4px 0;
+    padding: 5px;
+    box-shadow: 0px 1px 3px 0px rgba(119, 119, 119, 0.3);
+  }
+  .stars {
+    fa {
+      color: orange;
+    }
+  }
+}
+
+.collapsed {
+  display: none;
+}
+
+.title-collapsed {
+  text-align: center;
+  padding: 15px;
+  border-bottom: 1px solid lightblue;
+}

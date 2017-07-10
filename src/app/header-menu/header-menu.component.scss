@@ -1,0 +1,17 @@
+:host {
+  menu {
+    margin: 0;
+    ul {
+      display: flex;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+      li {
+        padding: 2px 10px;
+        display: block;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,27 @@
+<article *ngIf="hotel">
+  <div class="image-container">
+    <div>
+      <div class="recomended">
+        <p>¡Hotel recomendado!</p>
+      </div>
+      <img src="http://images.almundo.com/201/1000000/50000/48900/48884/48884_189_b.jpg">
+    </div>
+  </div>
+  <div class="details">
+    <h1><a>{{hotel.name}}</a></h1>
+    <div class="stars" >
+      <fa [name]="'star'" *ngFor="let star of getNumberAsList(hotel.stars)"></fa>
+    </div>
+    <div></div>
+  </div>
+  <div class="pricing">
+    <p class="pricing-details">Precio por noche por habitación</p>
+    <p class="price">
+      <span class="currency">ARS</span>
+      <span class="value">{{ hotel.price | number}}</span>
+    </p>
+    <p class="pricing-details">impuestos y tasas no incluidos</p>
+    <a class="button">Ver hotel</a>
+    <p class="pricing-payment-methods">Pagá en cuotas o en destino</p>
+  </div>
+</article>

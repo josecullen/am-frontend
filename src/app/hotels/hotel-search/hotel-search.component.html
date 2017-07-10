@@ -1,0 +1,10 @@
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex>
+  <am-hotel-filter
+   [minPrice]="minPrice"
+   [maxPrice]="maxPrice"
+   [(searchFilter)]="searchFilter"
+  (searchFilterChange)="onSearchFilterChange($event)"></am-hotel-filter>
+  <section>
+    <am-hotel-result *ngFor="let hotel of (hotels | hotelFilter:searchFilter)" [hotel]="hotel"></am-hotel-result>
+  </section>
+</div>

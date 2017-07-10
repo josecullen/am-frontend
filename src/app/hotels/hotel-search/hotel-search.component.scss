@@ -1,0 +1,17 @@
+:host {
+  .container {
+    //display: flex;
+    am-hotel-filter {
+      margin: 12px 7px;
+    }
+    section{
+      //display: flex;
+      flex-direction: column;
+      flex: 0.5 1 auto;
+      margin: 0 5px;
+      am-hotel-result {
+        margin: 7px 0;
+      }
+    }
+  }
+}

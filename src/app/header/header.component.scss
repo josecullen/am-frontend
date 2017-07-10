@@ -1,0 +1,17 @@
+:host {
+  nav{
+    height: 80px;
+    background-color: rgba(0,44,119,.7);
+    nav {
+      padding-top: 10px;
+      #logo {
+        a {
+          img {
+            max-height: 48px;
+          }
+        }
+      }
+    }
+  }
+
+}
